@@ -1,0 +1,11 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org" 
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" 
+      layout:decorator="layout/default">
+    <head>
+        <title th:text="${product.name}">name</title>
+    </head>
+    <body>
+        <div th:replace="fragments/header :: header"></div>
+    </body>
+</html>

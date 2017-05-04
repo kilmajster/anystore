@@ -1,0 +1,16 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org" 
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" 
+      layout:decorator="layout/default">
+    <head>
+        <title>anystore</title>
+    </head>
+    <body layout:fragment="content">
+        <div th:replace="fragments/header :: header"></div>
+        <div class="container">
+            <div th:each="product : ${products}">
+                <div th:replace="fragments/product-preview :: productPreview"></div>
+            </div>
+        </div>
+    </body>
+</html>

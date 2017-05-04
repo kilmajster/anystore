@@ -1,0 +1,22 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org" 
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" 
+      layout:decorator="layout/default">
+    <body th:fragment="productPreview">
+        <div class="col-sm-6 col-md-4">
+            <div class="thumbnail text-center">
+                <img src="http://lorempixel.com/200/200/"/>
+                <div class="caption">
+                    <h3 th:text="${product.name}">name</h3>
+                    <h4 th:text="#{price} + ' ' + ${product.price}">price</h4>
+                    <p th:text="${#strings.abbreviate(product.description, 150)}">description</p>
+                    <p>
+                        <a class="btn btn-primary" href="preview.html" th:href="@{'/' + ${product.id}}" th:text="#{more}">more</a>
+                        <a href="#" class="btn btn-default" th:text="#{addToCart}">Do koszyka</a>
+                    </p>
+                    <span th:class="${product.amount > 0 ? 'label label-success' : 'label label-danger'}" th:text="#{${product.amount} > 0 ? 'available' : 'noavailable'}">amount</span>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

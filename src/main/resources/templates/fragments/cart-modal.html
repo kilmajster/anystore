@@ -1,0 +1,31 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org" 
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" 
+      layout:decorator="layout/default">
+    <body th:fragment="cartModal">
+        <!-- Modal -->
+        <div class="modal fade" id="myModal" role="dialog">
+            <div class="modal-dialog">
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title" th:text="#{cart}">Cart</h4>
+                    </div>
+                    <div class="modal-body">
+                        <p>Some text in the modal.</p>
+                        <ul class="list-group">
+                            <li class="list-group-item">New <span class="badge">12</span></li>
+                            <li class="list-group-item">Deleted <span class="badge">5</span></li> 
+                            <li class="list-group-item">Warnings <span class="badge">3</span></li> 
+                        </ul>
+                        <p>Razem: <span class="badge pull-right">100</span></p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal" th:text="#{close}">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
